@@ -1,11 +1,25 @@
+<div class="row">
+	<div class="col-md-4">
+		<%= image_tag @book.book_img.url(:medium), class: "book-show" %>		
+	</div>
+	<div class="col-md-8">
+		<h2><%= @book.title %></h2>
+		<h3><%= @book.author %></h3>
+		<h4>Genre: <%= @book.category.name %></h4>
+		<p><%= @book.description %></p>		
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<%= render @book.reviews %>
+		<% if user_signed_in? %>
+			<div class="wrap-review">
 
-<h2><%= @book.title %></h2>
-<h3><%= @book.author %></h3>
-<h4>Genre: <%= @book.category.name %></h4>
-
-
-<p><%= @book.description %></p>
-
+				<%= link_to "Add Review", new_book_review_path(@book) %>
+			</div>
+		<% end %>	
+	</div>
+</div>
 <% if user_signed_in? %>
 
 		<%= link_to 'Back', root_path %>
@@ -16,4 +30,19 @@
 
 	<% end %>
 
-<% end %>	
+<% end %>
+
+<script>
+	$('.review-rating').raty({
+			readOnly: true,
+			score: function() {
+				return $(this).attr('data-score');
+			},
+			path: '/assets/'
+		})
+</script>
+	
+
+
+
+

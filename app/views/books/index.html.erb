@@ -7,12 +7,15 @@
 	</div>
 
 	<% else %>
-
+	<div class="row">
 		<% @books.each do |book| %>
-			<a href="/books/<%= book.id %>">
-				<!-- <h4><%= book.title %></h4>  -->
-				<%= image_tag book.book_img.url(:thumb) %>
-			</a>
+			<div class="col-md-3 wrap_book">
+				<a href="/books/<%= book.id %>">
+					<!-- <h4><%= book.title %></h4>  -->
+					<%= image_tag book.book_img.url(:medium), class: "book" %>
+				</a>
+			</div>
+			<br>	
 		<% end %>
-		
+	</div>	
 <% end %>	

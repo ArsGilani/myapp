@@ -4,10 +4,11 @@
     <title>Myapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
    
   </head>
 
@@ -27,8 +28,7 @@
         <% else %>
           <li class="nav-item"><%= link_to 'Log In', new_user_session_path, class: "nav-link" %></li>
         <% end %>
-      </ul>
-      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+     
           
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genre</a>
@@ -42,12 +42,7 @@
               <% end %>
             </li>
           </ul>
-          <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div> -->
+       
         </li>
 
         <% if user_signed_in? %>
@@ -55,18 +50,22 @@
         <% end %>
       </ul>
         
-     <!--  <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
+      </form>
     </div>
 
 
 </div>
+
+
+    <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    <%= yield %>
+        <%= yield %>
+    </div>
    
-
+  
   </body>
 </html>
