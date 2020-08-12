@@ -15,18 +15,9 @@
  */
 
 
-.col-md-3{
-	margin: 0 0 20px 0;
-}
-
- .book {
- 	width: 250px;
- 	height: 350px;
- 	border: solid;
- 	border-color: lightgrey;
-
- }
- .book-show {
- 	width: 325px;
- 	height: 475px;
- }
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims'

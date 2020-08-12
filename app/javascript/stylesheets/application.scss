@@ -1,2 +1,76 @@
 @import "~bootstrap/scss/bootstrap";
 
+
+.col-md-3{
+	margin: 0 0 20px 0;
+}
+
+ .book {
+ 	width: 250px;
+ 	height: 350px;
+ 	border: solid;
+ 	border-color: lightgrey;
+
+ }
+ .book-show  {
+ 	width: 325px;
+ 	height: auto;
+ }
+ 
+ .wrap_book img{
+ padding: 20px;
+ 	-webkit-box-shadow: 1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+ }
+ 
+.wrap_review {
+	margin-top: 20px;
+}
+.wrap_review p {
+	padding: 0 20px;
+}
+
+
+.wrap_review_stars{
+	width: 100%;
+    max-width: 325px;
+    height: auto;
+	
+	-webkit-box-shadow: 1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+ }
+
+ .wrap_book_info{
+ 	padding: 20px;
+ 	-webkit-box-shadow: 1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         1px 5px 13px 0px rgba(50, 50, 50, 0.75);
+ }
+ .review-rating{
+ 	padding: 20px;
+ }
+ .review_comment a{
+ 	padding: 0 20px;
+ }
+
+ .wrap-review,
+.btnn-group {
+	padding: 10px 20px;
+	
+}
+
+ .wrap-review, .btnn-group a{
+	cursor: pointer;
+	color: #000000;
+	text-decoration: none;
+}
+.btnn-group a{
+	padding: 10px;
+
+}
+.btnn-group a:hover {
+	color: #1010cc;
+	
+}

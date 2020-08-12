@@ -1,47 +1,47 @@
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-4 wrap_book">
 		<%= image_tag @book.book_img.url(:medium), class: "book-show" %>		
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-8 wrap_book_info">
 		<h2><%= @book.title %></h2>
 		<h3><%= @book.author %></h3>
+		<h2>Average Rating</h2>
+		<div class="average-review-rating" data-score=<%= @average_review %>></div>
 		<h4>Genre: <%= @book.category.name %></h4>
 		<p><%= @book.description %></p>		
 	</div>
 </div>
-<div class="row">
+<div class="row wrap_review">
 	<div class="col-md-4">
-		<%= render @book.reviews %>
-		<% if user_signed_in? %>
-			<div class="wrap-review">
+		<div class="wrap_review_stars">
+			<%= render @book.reviews %>
+			<% if user_signed_in? %>
+				<div class="wrap-review">
+					
+					<%= link_to "Add Review", new_book_review_path(@book) %><i class="fas fa-keyboard fa-3x"></i>
+				</div>
+			<% end %>
+			<div class="btnn-group">
+				<% if user_signed_in? %>
 
-				<%= link_to "Add Review", new_book_review_path(@book) %>
+						<%= link_to root_path do %>
+							<i class="fas fa-hand-point-left fa-3x"></i>
+						<% end %>
+					<% if @book.user_id == current_user.id %>
+
+						<%= link_to edit_book_path(@book) do %> <i class="fas fa-pencil-alt fa-3x"></i> <% end %>
+						<%= link_to book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } do %>
+							<i class="fas fa-trash-alt fa-5x"></i>
+						<% end %>
+
+					<% end %>
+
+				<% end %>
 			</div>
-		<% end %>	
+		</div>		
 	</div>
 </div>
-<% if user_signed_in? %>
 
-		<%= link_to 'Back', root_path %>
-	<% if @book.user_id == current_user.id %>
-
-		<%= link_to 'Edit', edit_book_path(@book) %>
-		<%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-	<% end %>
-
-<% end %>
-
-<script>
-	$('.review-rating').raty({
-			readOnly: true,
-			score: function() {
-				return $(this).attr('data-score');
-			},
-			path: '/assets/'
-		})
-</script>
-	
 
 
 
